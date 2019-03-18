@@ -615,11 +615,11 @@ def practice_problem3d(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ###########################################################################
-    for k in range(len(sequence)):
-        if sequence[k] == 0:
-            return k
-    else:
-        return -1
+    #for k in range(len(sequence)):
+        #if sequence[k] == 0:
+            #return k
+    #else:
+        #return -1
 
     ###########################################################################
     # TODO: 6. Just ABOVE this _TODO_, you should have implemented
@@ -636,7 +636,10 @@ def practice_problem3d(sequence):
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ###########################################################################
-
+    s = practice_problem3c(sequence)
+    if s == []:
+        return -1
+    return s[0]
 
 def run_test_practice_problem3e():
     """ Tests the    practice_problem3e    function. """
