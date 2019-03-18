@@ -38,7 +38,7 @@ def main():
     run_test_practice_problem3b()
     run_test_practice_problem3c()
     run_test_practice_problem3d()
-    #run_test_practice_problem3e()
+    run_test_practice_problem3e()
 
 
 def is_prime(n):
@@ -360,10 +360,10 @@ def practice_problem3b(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
 
-    for k in range (len(sequence)-1):
-        if sequence[len(sequence)-1] == sequence[k]:
+    for k in range (len(sequence)):
+        if sequence[-1] == sequence[k]:
             return True
-        else:
+        if sequence[-1] != sequence[k]:
             return False
 
 def run_test_practice_problem3c():
@@ -615,7 +615,12 @@ def practice_problem3d(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ###########################################################################
-    
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+        if sequence[k] != 0:
+            return -1
+
     ###########################################################################
     # TODO: 6. Just ABOVE this _TODO_, you should have implemented
     #     a solution for the   practice_problem3d   function.
@@ -759,14 +764,18 @@ def practice_problem3e(sequence):
       :type sequence: list(float)    or tuple(float)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ###########################################################################
-
+    sum = 0
+    for k in range (len(sequence)):
+        if k % 2 == 0:
+            sum = sum + sequence[k]
+    return sum
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
